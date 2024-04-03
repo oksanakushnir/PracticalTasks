@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntroductionToJava
 {
-    internal class TaskTwo
+    internal class Task_2
     {
         internal void CalculateTemp()
         {

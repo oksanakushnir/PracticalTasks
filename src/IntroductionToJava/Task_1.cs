@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntroductionToJava
 {
-    internal class TaskOne
+    internal class Task_1
     {
         internal void CalculateVAT()
         {

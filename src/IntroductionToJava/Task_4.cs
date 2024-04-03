@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntroductionToJava
 {
-    internal class TaskFour
+    internal class Task_4
     {
         internal void ParityCheck()
         {

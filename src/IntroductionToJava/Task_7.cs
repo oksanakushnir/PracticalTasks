@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IntroductionToJava
 {
-    internal class TaskSeven
+    internal class Task_7
     {
         internal void CalculateInterest()
         {

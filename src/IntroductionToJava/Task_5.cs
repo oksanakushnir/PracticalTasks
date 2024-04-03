@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntroductionToJava
 {
-    internal class TaskFive
+    internal class Task_5
     {
         internal void CalculateGrade()
         {

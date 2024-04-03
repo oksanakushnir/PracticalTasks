@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntroductionToJava
 {
-    internal class TaskSix
+    internal class Task_6
     {
         internal void CalculateAge()
         {

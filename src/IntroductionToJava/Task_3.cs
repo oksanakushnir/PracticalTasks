@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntroductionToJava
 {
-    internal class TaskThree
+    internal class Task_3
     {
         internal void CalculateVowels()
         {

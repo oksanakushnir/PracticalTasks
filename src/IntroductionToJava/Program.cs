@@ -34,56 +34,56 @@ namespace IntroductionToJava
                     {
                         case 1:
                         {
-                            var task = new TaskOne();
+                            var task = new Task_1();
                             task.CalculateVAT();
                             break;
                         }
 
                         case 2:
                         {
-                            var task = new TaskTwo();
+                            var task = new Task_2();
                             task.CalculateTemp();
                             break;
                         }
 
                         case 3:
                         {
-                            var task = new TaskThree();
+                            var task = new Task_3();
                             task.CalculateVowels();
                             break;
                         }
 
                         case 4:
                         {
-                            var task = new TaskFour();
+                            var task = new Task_4();
                             task.ParityCheck();
                             break;
                         }
 
                         case 5:
                         {
-                            var task = new TaskFive();
+                            var task = new Task_5();
                             task.CalculateGrade();
                             break;
                         }
                         
                         case 6:
                         {
-                            var task = new TaskSix();
+                            var task = new Task_6();
                             task.CalculateAge();
                             break;
                         }
 
                         case 7:
                         {
-                            var task = new TaskSeven();
+                            var task = new Task_7();
                             task.CalculateInterest();
                             break;
                         }
 
                         default:
                         {
-                            Console.WriteLine("TODO");
+                            Console.WriteLine("Not supported option");
                             break;
 
                         }
