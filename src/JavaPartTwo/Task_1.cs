@@ -38,43 +38,43 @@ namespace JavaPartTwo
                     {
                         case 1:
                         {
-                            SubTaskOne();
+                            SubTask_1();
                             break;
                         }
 
                         case 2:
                         {
-                            SubTaskTwo();
+                            SubTask_2();
                             break;
                         }
 
                         case 3:
                         {
-                            SubTaskThree();
+                            SubTask_3();
                             break;
                         }
 
                         case 4:
                         {
-                            SubTaskFour();
+                            SubTask_4();
                             break;
                         }
 
                         case 5:
                         {
-                            SubTaskFive();
+                            SubTask_5();
                             break;
                         }
 
                         case 6:
                         {
-                            SubTaskSix();
+                            SubTask_6();
                             break;
                         }
 
                         case 7:
                         {
-                            SubTaskSeven();
+                            SubTask_7();
                             break;
                         }
 
@@ -105,7 +105,7 @@ namespace JavaPartTwo
             }
         }
 
-        private void SubTaskOne()
+        private void SubTask_1()
         {
             Console.WriteLine("Enter first string:");
             var firstStr = Console.ReadLine();
@@ -139,7 +139,7 @@ namespace JavaPartTwo
             }
         }
 
-        private void SubTaskTwo()
+        private void SubTask_2()
         {
             Console.WriteLine("Enter string:");
             var inputStr = Console.ReadLine();
@@ -178,7 +178,7 @@ namespace JavaPartTwo
             Console.WriteLine($"Substring between provided indexes - {substring}");
         }
 
-        private void SubTaskThree()
+        private void SubTask_3()
         {
             Console.WriteLine("Enter main string:");
             var mainStr = Console.ReadLine();
@@ -209,7 +209,7 @@ namespace JavaPartTwo
             Console.WriteLine("Main string does not contain such sub string.");
         }
 
-        private void SubTaskFour()
+        private void SubTask_4()
         {
             Console.WriteLine("Enter main string:");
             var mainStr = Console.ReadLine();
@@ -242,7 +242,7 @@ namespace JavaPartTwo
             Console.WriteLine($"Result: {resultStr}");
         }
 
-        private void SubTaskFive()
+        private void SubTask_5()
         {
             Console.WriteLine("Enter string:");
             var mainStr = Console.ReadLine();
@@ -259,7 +259,7 @@ namespace JavaPartTwo
             Console.WriteLine($"Provided string{stPart}contains digits");
         }
 
-        private void SubTaskSix()
+        private void SubTask_6()
         {
             Console.WriteLine("Enter string:");
             var mainStr = Console.ReadLine();
@@ -275,7 +275,7 @@ namespace JavaPartTwo
             Console.WriteLine($"Result: {trimmedStr}");
         }
 
-        private void SubTaskSeven()
+        private void SubTask_7()
         {
             Console.WriteLine("Enter string:");
             var mainStr = Console.ReadLine();

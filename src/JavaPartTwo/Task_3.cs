@@ -7,17 +7,20 @@ namespace JavaPartTwo;
 
 internal class Task_3
 {
-    private readonly List<int> _numbersData = new();
+    private readonly INumberProvider _numberProvider;
+
+    internal Task_3(INumberProvider numberProvider)
+    {
+        _numberProvider = numberProvider;
+    }
 
     internal void NumberAnalysis()
     {
-        GenerateData();
-
         var proceedWithTasks = true;
 
         while (proceedWithTasks)
         {
-            Console.WriteLine("Select Sub Task (enter value from 1 top 6):");
+            Console.WriteLine("Select Sub Task (enter value from 1 top 7):");
 
             var sb = new StringBuilder();
             sb.AppendLine("SubTask 1 - Print all elements of the collection to the console");
@@ -38,43 +41,43 @@ internal class Task_3
                 {
                     case 1:
                     {
-                        SubTaskOne();
+                        SubTask_1();
                         break;
                     }
 
                     case 2:
                     {
-                        SubTaskTwo();
+                        SubTask_2();
                         break;
                     }
 
                     case 3:
                     {
-                        SubTaskThree();
+                        SubTask_3();
                         break;
                     }
 
                     case 4:
                     {
-                        SubTaskFour();
+                        SubTask_4();
                         break;
                     }
 
                     case 5:
                     {
-                        SubTaskFive();
+                        SubTask_5();
                         break;
                     }
 
                     case 6:
                     {
-                        SubTaskSix();
+                        SubTask_6();
                         break;
                     }
 
                     case 7:
                     {
-                        SubTaskSeven();
+                        SubTask_7();
                         break;
                     }
 
@@ -98,43 +101,32 @@ internal class Task_3
         }
     }
 
-    private void GenerateData()
-    {
-        _numbersData.Clear();
+    
 
-        var random = new Random();
-        for (var i = 0; i < 20; i++)
-        {
-            var randomNumber = random.Next(1, 101);
-            _numbersData.Add(randomNumber);
-        }
-    }
-
-    private void SubTaskOne()
+    private void SubTask_1()
     {
         Console.WriteLine("Collection elements:");
-        _numbersData.ForEach(Console.WriteLine);
+        _numberProvider.GetNumbers().ForEach(Console.WriteLine);
     }
 
-    private void SubTaskTwo()
+    private void SubTask_2()
     {
-        Console.WriteLine($"Minimum element: {_numbersData.Min()}");
-        Console.WriteLine($"Maximum element: {_numbersData.Max()}");
+        Console.WriteLine($"Minimum element: {_numberProvider.GetMinimumNumber()}");
+        Console.WriteLine($"Maximum element: {_numberProvider.GetMaximumNumber()}");
     }
 
-    private void SubTaskThree()
+    private void SubTask_3()
     {
-        Console.WriteLine($"Average value: {_numbersData.Average()}");
+        Console.WriteLine($"Average value: {_numberProvider.GetAverageNumber()}");
     }
 
-    private void SubTaskFour()
+    private void SubTask_4()
     {
-        _numbersData.Where(x => x % 2 != 0)
-            .ToList()
+        _numberProvider.GetEvenNumbers()
             .ForEach(Console.WriteLine);
     }
 
-    private void SubTaskFive()
+    private void SubTask_5()
     {
         Console.WriteLine("Enter number to check:");
         var userInput = Console.ReadLine();
@@ -145,20 +137,24 @@ internal class Task_3
             return;
         }
 
-        var compareRes = _numbersData.Contains(numberToCheck);
-        var stPart = compareRes ? " " : " does not ";
+        var compareRes = _numberProvider.ContainsNumber(numberToCheck);
+        var stPart = compareRes.Value ? " " : " does not ";
         Console.WriteLine($"Collection{stPart}contains a given number");
     }
 
-    private void SubTaskSix()
+    private void SubTask_6()
     {
-        _numbersData.Order()
-            .ToList()
+        _numberProvider.OrderNumbersByAsc()
             .ForEach(Console.WriteLine);
     }
 
-    private void SubTaskSeven()
+    private void SubTask_7()
     {
         GenerateData();
+    }
+
+    private void GenerateData()
+    {
+        _numberProvider.UpdateNumbers(NumberGenerator.GenerateData(20));
     }
 }

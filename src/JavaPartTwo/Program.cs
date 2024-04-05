@@ -11,12 +11,13 @@ internal class Program
 
         while (proceedWithTasks)
         {
-            Console.WriteLine("Select Task (enter value from 1 top 7):");
+            Console.WriteLine("Select Task (enter value from 1 top 4):");
 
             var sb = new StringBuilder();
             sb.AppendLine("Task 1 - Basic methods of the String class");
             sb.AppendLine("Task 2 - Rectangle Properties Calculation");
             sb.AppendLine("Task 3 - Analysis of a Collection of Numbers");
+            sb.AppendLine("Task 4 - Operations with a Book Collection");
 
             Console.WriteLine(sb.ToString());
 
@@ -41,8 +42,16 @@ internal class Program
 
                     case 3:
                     {
-                        var task = new Task_3();
+                        var numData = NumberGenerator.GenerateData(20);
+                        var task = new Task_3(new NumberProvider(numData));
                         task.NumberAnalysis();
+                        break;
+                    }
+
+                    case 4:
+                    {
+                        var task = new Task_4(new BookProvider(BookLibrary.GetBooks()));
+                        task.BookOperations();
                         break;
                     }
 

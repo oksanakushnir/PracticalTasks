@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntroductionToJava", "IntroductionToJava\IntroductionToJava.csproj", "{393877F6-EA30-401C-B8AD-C36DC8FD398B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaPartTwo", "JavaPartTwo\JavaPartTwo.csproj", "{57E86D7D-4EB6-4B45-84CB-A80CAC1367D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaPartTwo", "JavaPartTwo\JavaPartTwo.csproj", "{57E86D7D-4EB6-4B45-84CB-A80CAC1367D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaPartTwo.Tests", "JavaPartTwo.Tests\JavaPartTwo.Tests.csproj", "{BF8409B4-A2A9-4AE3-8DF1-774BBF35F5C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{57E86D7D-4EB6-4B45-84CB-A80CAC1367D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57E86D7D-4EB6-4B45-84CB-A80CAC1367D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57E86D7D-4EB6-4B45-84CB-A80CAC1367D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF8409B4-A2A9-4AE3-8DF1-774BBF35F5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8409B4-A2A9-4AE3-8DF1-774BBF35F5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8409B4-A2A9-4AE3-8DF1-774BBF35F5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8409B4-A2A9-4AE3-8DF1-774BBF35F5C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
