@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using OpenQA.Selenium;
 using SeleniumWebDriver.TestProjectConstructingSeleniumScript.Interfaces;
 

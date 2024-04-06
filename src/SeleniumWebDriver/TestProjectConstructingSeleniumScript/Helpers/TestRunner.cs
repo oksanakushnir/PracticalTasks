@@ -4,8 +4,6 @@ using OpenQA.Selenium;
 using System.Threading;
 using SeleniumWebDriver.TestProjectConstructingSeleniumScript.Interfaces;
 using SeleniumWebDriver.TestProjectConstructingSeleniumScript.Repository;
-using System;
-using System.Timers;
 
 namespace SeleniumWebDriver.TestProjectConstructingSeleniumScript.Helpers
 {
