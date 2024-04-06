@@ -1,5 +1,5 @@
 ﻿
-namespace SeleniumWebDriver.TestProjectConstructingSeleniumScript.Helpers
+namespace SeleniumWebDriver.TestProjectConstructingSeleniumScript.Repository
 {
     public class WelcomePageErrorRepository
     {

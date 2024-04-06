@@ -2,6 +2,10 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Threading;
+using SeleniumWebDriver.TestProjectConstructingSeleniumScript.Interfaces;
+using SeleniumWebDriver.TestProjectConstructingSeleniumScript.Repository;
+using System;
+using System.Timers;
 
 namespace SeleniumWebDriver.TestProjectConstructingSeleniumScript.Helpers
 {
@@ -9,6 +13,8 @@ namespace SeleniumWebDriver.TestProjectConstructingSeleniumScript.Helpers
     {
         protected IWebDriver Driver { get; set; }
         protected IJavaScriptExecutor JSExecutor { get; set; }
+
+        protected IWelcomePageRepository WelcomePageRepository { get; set; }
 
         [OneTimeSetUp]
         public void TestOneTimeSetUp()
@@ -41,7 +47,12 @@ namespace SeleniumWebDriver.TestProjectConstructingSeleniumScript.Helpers
 
         protected IWebElement FindElement(string selector)
         {
-            return Driver.FindElement(By.XPath(selector));
+            return WelcomePageRepository switch
+            {
+                WelcomePageXPathRepository => Driver.FindElement(By.XPath(selector)),
+                WelcomePageJSInjectRepository => (IWebElement)JSExecutor.ExecuteScript(selector),
+                _ => null
+            };
         }
     }
 }
