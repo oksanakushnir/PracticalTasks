@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 
-namespace SeleniumWebDriver
+namespace SeleniumWebDriver.AssertParameterizedTestsTestDesign
 {
     public class SigninParameterizedTests
     {

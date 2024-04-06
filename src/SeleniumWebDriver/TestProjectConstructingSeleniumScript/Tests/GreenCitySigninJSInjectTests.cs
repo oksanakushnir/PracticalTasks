@@ -1,40 +1,18 @@
-﻿using FluentAssertions.Execution;
+﻿using FluentAssertions;
 using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using FluentAssertions;
+using SeleniumWebDriver.TestProjectConstructingSeleniumScript.Helpers;
 
-namespace SeleniumWebDriver
+namespace SeleniumWebDriver.TestProjectConstructingSeleniumScript.Tests
 {
     [TestFixture]
-    public class SinginSearchWebElementsTests
+    public class GreenCitySigninJSInjectTests : TestRunner
     {
-        private IWebDriver Driver { get; set; }
+        private static IWelcomePageRepository WelcomePageRepository { get; } = new WelcomePageRepository(RepositorySelectorType.JSInject);
 
-        [SetUp]
-        public void TestSetUp()
-        {
-            Driver = new ChromeDriver();
-            Driver.Url = "https://www.greencity.social/#/greenCity";
-            Driver.Manage().Window.FullScreen();
-        }
 
-        [TearDown]
-        public void TestTearDown()
-        {
-            Thread.Sleep(2000);
-            Driver.Quit();
-        }
-
-        [TestCase("samplestest@greencity.com", "weyt3$Guew^")]
-        [TestCase("anotheruser@greencity.com", "anotherpassword")]
-        public void SignIn(string email, string password)
+        [TestCaseSource(typeof(TestDataProvider), nameof(TestDataProvider.GetTestDataForSignIn))]
+        public void SignInJSInject(string email, string password)
         {
             var jsExecutor = (IJavaScriptExecutor)Driver;
 
@@ -76,8 +54,8 @@ namespace SeleniumWebDriver
         }
 
 
-        [TestCase("Please check that your e-mail address is indicated correctly")]
-        public void SignInNotValid(string errMessage)
+        [TestCaseSource(typeof(TestDataProvider), nameof(TestDataProvider.GetTestDataForSignInInvalidEmail))]
+        public void SignInNotValidJSInject(string errMessage)
         {
             var jsExecutor = (IJavaScriptExecutor)Driver;
 
@@ -94,7 +72,8 @@ namespace SeleniumWebDriver
             txtPassword.SendKeys("testpassword");
 
             jsScript = "return document.querySelector(\"div[id='email-err-msg'] app-error div\")";
-            var divError = (WebElement)jsExecutor.ExecuteScript(jsScript); ;
+            var divError = (WebElement)jsExecutor.ExecuteScript(jsScript);
+            
             divError.Text.Should().Be(errMessage);
         }
     }

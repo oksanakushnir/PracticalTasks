@@ -7,7 +7,7 @@ using OpenQA.Selenium.Support.UI;
 using FluentAssertions.Execution;
 
 
-namespace SeleniumWebDriver
+namespace SeleniumWebDriver.PracticalTask_1
 {
     [TestFixture]
     public class SigninTests
@@ -52,15 +52,15 @@ namespace SeleniumWebDriver
             var headerH1 = Driver.FindElement(By.XPath(xpathSelector));
             var actualH1Text = headerH1.Text;
             actualH1Text.Should().Be("Welcome back!");
-            
+
             xpathSelector = "//h2[normalize-space()='Please enter your details to sign in.']";
             var headerH2 = Driver.FindElement(By.XPath(xpathSelector));
             var actualH2Text = headerH2.Text;
             actualH2Text.Should().Be("Please enter your details to sign in.");
-            
+
             xpathSelector = "//label[normalize-space()='Email']";
             var lblEmail = Driver.FindElement(By.XPath(xpathSelector));
-            lblEmail.Text.Should().Be("Email"); 
+            lblEmail.Text.Should().Be("Email");
 
             xpathSelector = "//input[@id='email']";
             var txtEmail = Driver.FindElement(By.XPath(xpathSelector));
@@ -81,22 +81,22 @@ namespace SeleniumWebDriver
             btnSubmit.Click();
         }
 
-        
+
         [TestCase("Please check that your e-mail address is indicated correctly")]
         public void SignInNotValid(string errMessage)
         {
             var xpathSelector = "//a[contains(@class, 'header_sign-in-link')]";
             var btnSignIn = Driver.FindElement(By.XPath(xpathSelector));
             btnSignIn.Click();
-            
+
             xpathSelector = "//input[@id='email']";
             var txtEmail = Driver.FindElement(By.XPath(xpathSelector));
             txtEmail.SendKeys("samplestestgreencity.com");
-            
+
             xpathSelector = "//input[@id='password']";
             var txtPassword = Driver.FindElement(By.XPath(xpathSelector));
             txtPassword.SendKeys("testpassword");
-            
+
             xpathSelector = "//div[contains(text(),'Please check that your e-mail address is indicated')]";
             var divError = Driver.FindElement(By.XPath(xpathSelector));
             divError.Text.Should().Be(errMessage);
